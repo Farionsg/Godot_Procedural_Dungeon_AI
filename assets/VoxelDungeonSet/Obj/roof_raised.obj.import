@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bt2m1v634l8cw"
+path="res://.godot/imported/roof_raised.obj-622012f626054e2313c68a4ae8bb9208.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roof_raised.obj-622012f626054e2313c68a4ae8bb9208.mesh"]
+
+source_file="res://assets/VoxelDungeonSet/Obj/roof_raised.obj"
+dest_files=["res://.godot/imported/roof_raised.obj-622012f626054e2313c68a4ae8bb9208.mesh", "res://.godot/imported/roof_raised.obj-622012f626054e2313c68a4ae8bb9208.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

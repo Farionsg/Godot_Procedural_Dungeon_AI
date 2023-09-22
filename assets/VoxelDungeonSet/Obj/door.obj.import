@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bienglci5oekh"
+path="res://.godot/imported/door.obj-4a9633fa4eb580b8c8def80e7ec8f23d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/door.obj-4a9633fa4eb580b8c8def80e7ec8f23d.mesh"]
+
+source_file="res://assets/VoxelDungeonSet/Obj/door.obj"
+dest_files=["res://.godot/imported/door.obj-4a9633fa4eb580b8c8def80e7ec8f23d.mesh", "res://.godot/imported/door.obj-4a9633fa4eb580b8c8def80e7ec8f23d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

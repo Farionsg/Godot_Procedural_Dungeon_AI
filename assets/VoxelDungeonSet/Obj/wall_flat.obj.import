@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bgefxnmhqxeef"
+path="res://.godot/imported/wall_flat.obj-9c039299d2a611c1782e5d1d37d0fe1e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_flat.obj-9c039299d2a611c1782e5d1d37d0fe1e.mesh"]
+
+source_file="res://assets/VoxelDungeonSet/Obj/wall_flat.obj"
+dest_files=["res://.godot/imported/wall_flat.obj-9c039299d2a611c1782e5d1d37d0fe1e.mesh", "res://.godot/imported/wall_flat.obj-9c039299d2a611c1782e5d1d37d0fe1e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

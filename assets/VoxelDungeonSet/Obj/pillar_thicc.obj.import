@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c2sfp1yjup27c"
+path="res://.godot/imported/pillar_thicc.obj-c9a6789f7cc99c9a287fc10fd471ed83.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pillar_thicc.obj-c9a6789f7cc99c9a287fc10fd471ed83.mesh"]
+
+source_file="res://assets/VoxelDungeonSet/Obj/pillar_thicc.obj"
+dest_files=["res://.godot/imported/pillar_thicc.obj-c9a6789f7cc99c9a287fc10fd471ed83.mesh", "res://.godot/imported/pillar_thicc.obj-c9a6789f7cc99c9a287fc10fd471ed83.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

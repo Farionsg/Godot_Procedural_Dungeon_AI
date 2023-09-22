@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dgk4d7o4qxlq"
+path="res://.godot/imported/barstool.obj-ecede1fcacd215188bff8a5981e40734.mesh"
+
+[deps]
+
+files=["res://.godot/imported/barstool.obj-ecede1fcacd215188bff8a5981e40734.mesh"]
+
+source_file="res://assets/VoxelDungeonSet/Obj/barstool.obj"
+dest_files=["res://.godot/imported/barstool.obj-ecede1fcacd215188bff8a5981e40734.mesh", "res://.godot/imported/barstool.obj-ecede1fcacd215188bff8a5981e40734.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

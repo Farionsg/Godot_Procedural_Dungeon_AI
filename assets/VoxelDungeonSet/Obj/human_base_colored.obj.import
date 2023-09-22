@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bijgly3gxb158"
+path="res://.godot/imported/human_base_colored.obj-0129713eaf505cbe1429e2ab58bbc5f3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/human_base_colored.obj-0129713eaf505cbe1429e2ab58bbc5f3.mesh"]
+
+source_file="res://assets/VoxelDungeonSet/Obj/human_base_colored.obj"
+dest_files=["res://.godot/imported/human_base_colored.obj-0129713eaf505cbe1429e2ab58bbc5f3.mesh", "res://.godot/imported/human_base_colored.obj-0129713eaf505cbe1429e2ab58bbc5f3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

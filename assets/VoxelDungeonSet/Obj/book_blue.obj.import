@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://y33rb02ub1ys"
+path="res://.godot/imported/book_blue.obj-45ec83a1cf62bb963f7eae93db34c52f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/book_blue.obj-45ec83a1cf62bb963f7eae93db34c52f.mesh"]
+
+source_file="res://assets/VoxelDungeonSet/Obj/book_blue.obj"
+dest_files=["res://.godot/imported/book_blue.obj-45ec83a1cf62bb963f7eae93db34c52f.mesh", "res://.godot/imported/book_blue.obj-45ec83a1cf62bb963f7eae93db34c52f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

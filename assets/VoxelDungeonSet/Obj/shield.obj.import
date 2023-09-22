@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b5kjctqqf58kh"
+path="res://.godot/imported/shield.obj-8e385e2b720503392302029a762fab33.mesh"
+
+[deps]
+
+files=["res://.godot/imported/shield.obj-8e385e2b720503392302029a762fab33.mesh"]
+
+source_file="res://assets/VoxelDungeonSet/Obj/shield.obj"
+dest_files=["res://.godot/imported/shield.obj-8e385e2b720503392302029a762fab33.mesh", "res://.godot/imported/shield.obj-8e385e2b720503392302029a762fab33.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

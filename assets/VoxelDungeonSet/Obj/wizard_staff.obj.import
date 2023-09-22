@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://hnctnbg40td5"
+path="res://.godot/imported/wizard_staff.obj-29fd355a7b109c8afb62f99356c0d4be.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wizard_staff.obj-29fd355a7b109c8afb62f99356c0d4be.mesh"]
+
+source_file="res://assets/VoxelDungeonSet/Obj/wizard_staff.obj"
+dest_files=["res://.godot/imported/wizard_staff.obj-29fd355a7b109c8afb62f99356c0d4be.mesh", "res://.godot/imported/wizard_staff.obj-29fd355a7b109c8afb62f99356c0d4be.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

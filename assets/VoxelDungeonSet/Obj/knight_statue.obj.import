@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bfjfjx0lrqwwg"
+path="res://.godot/imported/knight_statue.obj-e7c8b2eba3a8b4a439bb0f74aa33bd7b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/knight_statue.obj-e7c8b2eba3a8b4a439bb0f74aa33bd7b.mesh"]
+
+source_file="res://assets/VoxelDungeonSet/Obj/knight_statue.obj"
+dest_files=["res://.godot/imported/knight_statue.obj-e7c8b2eba3a8b4a439bb0f74aa33bd7b.mesh", "res://.godot/imported/knight_statue.obj-e7c8b2eba3a8b4a439bb0f74aa33bd7b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

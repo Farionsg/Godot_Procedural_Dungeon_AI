@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://blsawgu5g8mlc"
+path="res://.godot/imported/chair.obj-f32689f152d628671813902195987126.mesh"
+
+[deps]
+
+files=["res://.godot/imported/chair.obj-f32689f152d628671813902195987126.mesh"]
+
+source_file="res://assets/VoxelDungeonSet/Obj/chair.obj"
+dest_files=["res://.godot/imported/chair.obj-f32689f152d628671813902195987126.mesh", "res://.godot/imported/chair.obj-f32689f152d628671813902195987126.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
