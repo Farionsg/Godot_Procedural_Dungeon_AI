@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2au4bls2k8ui"]
+
+[ext_resource type="Script" path="res://DungeonGeneration/player.gd" id="1_7u3ke"]
+[ext_resource type="ArrayMesh" uid="uid://drq7g647vg86d" path="res://assets/VoxelDungeonSet/Obj/human_base.obj" id="1_h56jj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ej41"]
+size = Vector3(1, 1.32416, 1)
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_7u3ke")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0168419, 0.463216, 0.00584793)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 2.02258, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_7ej41")
+
+[node name="HumanBase" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_h56jj")

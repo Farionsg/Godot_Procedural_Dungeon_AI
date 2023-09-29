@@ -15,6 +15,9 @@ func set_border_size(val : int)->void:
 	if Engine.is_editor_hint():
 		visualize_border()
 
+@export var punto_A : Vector2i
+@export var punto_B : Vector2i
+@export var room_type : bool = 0
 @export var room_number : int = 4
 @export var room_margin : int = 1
 @export var room_recursion : int = 15
@@ -132,6 +135,7 @@ func create_hallways(hallway_graph : AStar2D):
 			if grid_map.get_cell_item(pos) < 0:
 				grid_map.set_cell_item(pos, 1)
 	
+	set_AB(astar)
 	
 func make_room(rec: int):
 	if !rec>0:
@@ -163,3 +167,10 @@ func make_room(rec: int):
 	var pos : Vector3 = Vector3(avg_x, 0, avg_z)
 	room_positions.append(pos)
 
+func set_AB(graph: AStarGrid2D):
+	var A : Vector2i = Vector2i(1,1)
+	punto_A = graph.get_point_position(A)
+	var B : Vector2i = graph.size - A
+	punto_B = graph.get_point_position(B)
+	print("El punto A es: ",punto_A)
+	print("El punto B es: ",punto_B)
