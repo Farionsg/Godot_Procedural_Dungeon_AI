@@ -23,7 +23,7 @@ mesh = ExtResource("2_etq54")
 [node name="StaticBody3D" type="StaticBody3D" parent="TileFlat"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TileFlat/StaticBody3D"]
-transform = Transform3D(1.58415, 0, 0, 0, 0.305065, 0, 0, 0, 1.58634, 0, 0.15173, 0)
+transform = Transform3D(1.58415, 0, 0, 0, 0.305065, 0, 0, 0, 1.58634, 0.015, 0.152, 0.028)
 shape = SubResource("BoxShape3D_xi074")
 
 [node name="TileRaised" type="MeshInstance3D" parent="."]

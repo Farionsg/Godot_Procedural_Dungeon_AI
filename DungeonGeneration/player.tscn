@@ -1,20 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2au4bls2k8ui"]
+[gd_scene load_steps=4 format=3 uid="uid://juwwquswk23e"]
 
 [ext_resource type="Script" path="res://DungeonGeneration/player.gd" id="1_7u3ke"]
 [ext_resource type="ArrayMesh" uid="uid://drq7g647vg86d" path="res://assets/VoxelDungeonSet/Obj/human_base.obj" id="1_h56jj"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7ej41"]
-size = Vector3(1, 1.32416, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_cnorn"]
+size = Vector3(0.618675, 0.216376, 0.297969)
 
-[node name="Player" type="Node3D"]
+[node name="Player" type="RigidBody3D"]
 script = ExtResource("1_7u3ke")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0168419, 0.463216, 0.00584793)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 2.02258, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_7ej41")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.154084, 0.0527213)
+shape = SubResource("BoxShape3D_cnorn")
 
 [node name="HumanBase" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 0, 0)
 mesh = ExtResource("1_h56jj")
+
+[node name="TwistPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]

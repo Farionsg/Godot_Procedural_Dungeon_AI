@@ -2,34 +2,51 @@
 extends Node3D
 
 @onready var grid_map : GridMap = $GridMap
+@onready var player : RigidBody3D = $Player
 
 @export var start : bool = false : set = set_start
 func set_start(val:bool)->void:
+	$Player.position = Vector3i(0,0,0)
 	if Engine.is_editor_hint():
 		generate()
+		playerAI()
+
 
 @export_range(0,1) var survival_chance : float = 0.25
+
 @export var border_size : int = 20 : set = set_border_size
 func set_border_size(val : int)->void:
 	border_size = val
 	if Engine.is_editor_hint():
 		visualize_border()
 
-@export var punto_A : Vector2i
-@export var punto_B : Vector2i
+@export var punto_A : Vector3
+@export var punto_B : Vector3
 @export var room_type : bool = 0
-@export var room_number : int = 4
-@export var room_margin : int = 1
+@export var room_number : int = 20
+@export var room_margin : int = 2
 @export var room_recursion : int = 15
-@export var min_room_size : int = 2
-@export var max_room_size : int = 4
+@export var min_room_size : int = 7
+@export var max_room_size : int = 14
 @export_multiline var custom_seed : String = "" : set = set_seed
+var inicio_juego : bool = false
 func set_seed(val:String)->void:
 	custom_seed = val
 	seed(val.hash())
 
 var room_tiles : Array[PackedVector3Array] = []
 var room_positions : PackedVector3Array = []
+
+func _init():
+	inicio_juego = false
+
+func _process(delta):
+	if !inicio_juego:
+		$Player.position = Vector3i(0,0,0)
+		generate()
+		playerAI()
+		inicio_juego = true
+
 	
 func visualize_border():
 	grid_map.clear()
@@ -42,10 +59,20 @@ func visualize_border():
 func generate():
 	room_tiles.clear()
 	room_positions.clear()
+	
 	if custom_seed : set_seed(custom_seed)
 	visualize_border()
 	for i in room_number:
 		make_room(room_recursion)
+	
+	
+	punto_A = room_positions[0]
+	punto_B = room_positions[room_positions.size() - 1]
+	
+	
+	
+	print("Las coordenadas del spawn son : ", punto_A)
+	print("Las coordenadas del objetivo son : ", punto_B)
 	
 	var rpv2 : PackedVector2Array = []
 	var del_graph : AStar2D = AStar2D.new()
@@ -95,6 +122,7 @@ func generate():
 					hallway_graph.connect_points(p,c)
 					
 	create_hallways(hallway_graph)
+	$DunMesh.create_dungeon()
 
 func create_hallways(hallway_graph : AStar2D):
 	var hallways : Array[PackedVector3Array] = []
@@ -135,7 +163,6 @@ func create_hallways(hallway_graph : AStar2D):
 			if grid_map.get_cell_item(pos) < 0:
 				grid_map.set_cell_item(pos, 1)
 	
-	set_AB(astar)
 	
 func make_room(rec: int):
 	if !rec>0:
@@ -147,6 +174,10 @@ func make_room(rec: int):
 	var start_pos : Vector3i
 	start_pos.x = randi() % (border_size - width + 1)
 	start_pos.z = randi() % (border_size - height + 1)
+	
+
+	
+
 	
 	for r in range(-room_margin, height + room_margin):
 		for c in range(-room_margin, width + room_margin):
@@ -167,10 +198,5 @@ func make_room(rec: int):
 	var pos : Vector3 = Vector3(avg_x, 0, avg_z)
 	room_positions.append(pos)
 
-func set_AB(graph: AStarGrid2D):
-	var A : Vector2i = Vector2i(1,1)
-	punto_A = graph.get_point_position(A)
-	var B : Vector2i = graph.size - A
-	punto_B = graph.get_point_position(B)
-	print("El punto A es: ",punto_A)
-	print("El punto B es: ",punto_B)
+func playerAI():
+	$Player.translate(Vector3i(punto_A.x, 5, punto_A.z))

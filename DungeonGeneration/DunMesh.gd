@@ -6,10 +6,10 @@ extends Node3D
 
 
 @export_range(0,1) var room_type_chance
-@export var start : bool = false : set = set_start
-func set_start(val:bool)->void:
-	if Engine.is_editor_hint():
-		create_dungeon()
+#@export var start : bool = false : set = set_start
+#func set_start(val:bool)->void:
+#	if Engine.is_editor_hint():
+#		create_dungeon()
 
 var dun_cell_scene : PackedScene = preload("res://DungeonGeneration/dun_cell.tscn")
 

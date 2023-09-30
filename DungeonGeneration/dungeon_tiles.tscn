@@ -16,24 +16,20 @@ albedo_color = Color(0.513726, 0, 0.176471, 1)
 [node name="Dungeon Tiles" type="Node3D"]
 
 [node name="RoomTile" type="MeshInstance3D" parent="."]
-visible = false
 mesh = SubResource("BoxMesh_w3mxs")
 surface_material_override/0 = SubResource("StandardMaterial3D_f57to")
 
 [node name="HallwayTile" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98126, 0, 0)
-visible = false
 mesh = SubResource("BoxMesh_w3mxs")
 surface_material_override/0 = SubResource("StandardMaterial3D_clqqx")
 
 [node name="DoorTile" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38965, 0, 0)
-visible = false
 mesh = SubResource("BoxMesh_w3mxs")
 surface_material_override/0 = SubResource("StandardMaterial3D_xprmb")
 
 [node name="BorderTile" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51671, 0, 0)
-visible = false
 mesh = SubResource("BoxMesh_w3mxs")
 surface_material_override/0 = SubResource("StandardMaterial3D_2r73f")
