@@ -2,11 +2,13 @@
 extends Node3D
 
 @onready var grid_map : GridMap = $GridMap
-@onready var player : RigidBody3D = $Player
+@onready var player : CharacterBody3D = $Player
 
 @export var start : bool = false : set = set_start
 func set_start(val:bool)->void:
 	$Player.position = Vector3i(0,0,0)
+	$Target.position = Vector3i(0,0,0)
+	$Player.rotation = Vector3i(0,0,0)
 	if Engine.is_editor_hint():
 		generate()
 		playerAI()
@@ -19,6 +21,7 @@ func set_border_size(val : int)->void:
 	border_size = val
 	if Engine.is_editor_hint():
 		visualize_border()
+
 
 @export var punto_A : Vector3
 @export var punto_B : Vector3
@@ -43,9 +46,14 @@ func _init():
 func _process(delta):
 	if !inicio_juego:
 		$Player.position = Vector3i(0,0,0)
+		$Target.position = Vector3i(0,0,0)
+		$Player.rotation = Vector3i(0,0,0)
 		generate()
 		playerAI()
 		inicio_juego = true
+		if Input.is_action_just_pressed("Pause"):
+			get_tree().paused = true
+			print("Juego pausado")
 
 	
 func visualize_border():
@@ -122,7 +130,8 @@ func generate():
 					hallway_graph.connect_points(p,c)
 					
 	create_hallways(hallway_graph)
-	$DunMesh.create_dungeon()
+	$NavigationRegion3D.get_node("DunMesh").create_dungeon()
+	$NavigationRegion3D.bake_navigation_mesh()
 
 func create_hallways(hallway_graph : AStar2D):
 	var hallways : Array[PackedVector3Array] = []
@@ -199,4 +208,10 @@ func make_room(rec: int):
 	room_positions.append(pos)
 
 func playerAI():
-	$Player.translate(Vector3i(punto_A.x, 5, punto_A.z))
+	var velocity = Vector3.FORWARD
+	$Player.translate(Vector3i(punto_A.x, 3, punto_A.z) * 2)
+	$Target.translate(Vector3i(punto_B.x, 5, punto_B.z) * 2)
+	
+	$Player.set_Target($Target.global_position)
+	$Player.rotation.y = lerp($Player.rotation.y, atan2(-velocity.x, -velocity.z),10)
+

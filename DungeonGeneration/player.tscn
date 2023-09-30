@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://juwwquswk23e"]
+[gd_scene load_steps=5 format=3 uid="uid://juwwquswk23e"]
 
 [ext_resource type="Script" path="res://DungeonGeneration/player.gd" id="1_7u3ke"]
 [ext_resource type="ArrayMesh" uid="uid://drq7g647vg86d" path="res://assets/VoxelDungeonSet/Obj/human_base.obj" id="1_h56jj"]
+[ext_resource type="Script" path="res://DungeonGeneration/Camera3D.gd" id="3_kufhy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cnorn"]
+margin = 0.0
 size = Vector3(0.618675, 0.216376, 0.297969)
 
-[node name="Player" type="RigidBody3D"]
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800679, 0.020761, 0.0442394)
+velocity = Vector3(1.65378e-23, 5.78352e-24, 1.4113e-23)
 script = ExtResource("1_7u3ke")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -24,6 +28,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, -0.00620437, 3.50475e-05, 1.4998)
+script = ExtResource("3_kufhy")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.1
+height = 0.22
+radius = 0.2
+debug_enabled = true
