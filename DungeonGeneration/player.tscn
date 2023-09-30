@@ -9,8 +9,8 @@ margin = 0.0
 size = Vector3(0.618675, 0.216376, 0.297969)
 
 [node name="Player" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800679, 0.020761, 0.0442394)
-velocity = Vector3(1.65378e-23, 5.78352e-24, 1.4113e-23)
+transform = Transform3D(-0.933142, 0, -0.359502, 0, 1, 0, 0.359502, 0, -0.933142, 0.0987908, 0.0375569, 0.105641)
+velocity = Vector3(1.97532e-31, 1.24041e-31, 5.12725e-31)
 script = ExtResource("1_7u3ke")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -35,6 +35,7 @@ script = ExtResource("3_kufhy")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.1
+path_postprocessing = 1
 height = 0.22
 radius = 0.2
 debug_enabled = true
