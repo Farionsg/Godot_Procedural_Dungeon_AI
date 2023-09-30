@@ -9,8 +9,8 @@ margin = 0.0
 size = Vector3(0.618675, 0.216376, 0.297969)
 
 [node name="Player" type="CharacterBody3D"]
-transform = Transform3D(-0.933142, 0, -0.359502, 0, 1, 0, 0.359502, 0, -0.933142, 0.0987908, 0.0375569, 0.105641)
-velocity = Vector3(1.97532e-31, 1.24041e-31, 5.12725e-31)
+transform = Transform3D(-0.707104, 0, -0.707105, 0, 1, 0, 0.707105, 0, -0.707104, 0.127644, 0.0418727, 0.121649)
+velocity = Vector3(2.8026e-45, 2.8026e-45, 2.8026e-45)
 script = ExtResource("1_7u3ke")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

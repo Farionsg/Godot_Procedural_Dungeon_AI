@@ -32,6 +32,8 @@ func set_border_size(val : int)->void:
 @export var min_room_size : int = 7
 @export var max_room_size : int = 14
 @export_multiline var custom_seed : String = "" : set = set_seed
+
+
 var inicio_juego : bool = false
 func set_seed(val:String)->void:
 	custom_seed = val
@@ -73,12 +75,9 @@ func generate():
 	for i in room_number:
 		make_room(room_recursion)
 	
-	
 	punto_A = room_positions[0]
 	punto_B = room_positions[room_positions.size() - 1]
-	
-	
-	
+
 	print("Las coordenadas del spawn son : ", punto_A)
 	print("Las coordenadas del objetivo son : ", punto_B)
 	
@@ -183,10 +182,6 @@ func make_room(rec: int):
 	var start_pos : Vector3i
 	start_pos.x = randi() % (border_size - width + 1)
 	start_pos.z = randi() % (border_size - height + 1)
-	
-
-	
-
 	
 	for r in range(-room_margin, height + room_margin):
 		for c in range(-room_margin, width + room_margin):
