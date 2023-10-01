@@ -3,6 +3,8 @@ extends Node3D
 
 @onready var grid_map : GridMap = $GridMap
 @onready var player : CharacterBody3D = $Player
+@onready var datos : CanvasLayer = $UI
+
 
 @export var start : bool = false : set = set_start
 func set_start(val:bool)->void:
@@ -23,9 +25,9 @@ func set_border_size(val : int)->void:
 		visualize_border()
 
 
-@export var punto_A : Vector3
-@export var punto_B : Vector3
-@export var room_type : bool = 0
+var punto_A : Vector3
+var punto_B : Vector3
+var room_type : bool = 0
 @export var room_number : int = 20
 @export var room_margin : int = 2
 @export var room_recursion : int = 15
@@ -53,10 +55,11 @@ func _process(delta):
 		generate()
 		playerAI()
 		inicio_juego = true
-		if Input.is_action_just_pressed("Pause"):
-			get_tree().paused = true
-			print("Juego pausado")
-
+	if Input.is_action_just_pressed("Pause"):
+		$Player.pause()
+	if Input.is_action_just_pressed("Start"):
+		inicio_juego = false
+	mandarDatos()
 	
 func visualize_border():
 	grid_map.clear()
@@ -80,6 +83,7 @@ func generate():
 
 	print("Las coordenadas del spawn son : ", punto_A)
 	print("Las coordenadas del objetivo son : ", punto_B)
+	mandarDatos()
 	
 	var rpv2 : PackedVector2Array = []
 	var del_graph : AStar2D = AStar2D.new()
@@ -209,4 +213,8 @@ func playerAI():
 	
 	$Player.set_Target($Target.global_position)
 	$Player.rotation.y = lerp($Player.rotation.y, atan2(-velocity.x, -velocity.z),10)
+	
 
+func mandarDatos():
+	$UI.set_Text(str(punto_A), str(punto_B), str($Player.position))
+	$UI.update_spawn_label()

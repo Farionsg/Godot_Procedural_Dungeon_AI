@@ -29,8 +29,8 @@ data = {
 }
 
 [node name="Player" parent="." instance=ExtResource("4_0plbh")]
-transform = Transform3D(0.69984, 0, -0.714081, 0, 1, 0, 0.714081, 0, 0.69984, 84.829, 4.75, 42.6137)
-velocity = Vector3(0.43851, -1.027e-06, 0.304255)
+transform = Transform3D(0.518358, 0, -0.854981, 0, 1, 0, 0.854981, 0, 0.518358, 84.8305, 4.75, 42.6147)
+velocity = Vector3(0.091563, -1.00226e-06, 0.063517)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)

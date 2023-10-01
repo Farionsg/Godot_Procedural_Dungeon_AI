@@ -24,3 +24,10 @@ func mover_player(delta, target):
 func set_Target(targetP):
 	target = targetP
 
+func pause():
+	get_tree().paused = true
+	print("Juego pausado")
+
+func unPause():
+	get_tree().paused = false
+	print("Juego reaunudado")
